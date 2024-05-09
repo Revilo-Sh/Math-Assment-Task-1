@@ -72,15 +72,6 @@ namespace MathClasses
 		Matrix3 operator *(Matrix3 rhs) const
 		{
 			Matrix3 result;
-			//for (size_t i = 0; i < 3; ++i) {
-			//	// First Row From Matrix
-			//	Vector3 row(mm[0][i], mm[1][i], mm[2][i]);
-
-			//	// Second Row From Matrix
-			//	for (size_t j = 0; j < 3; ++j) {
-			//		result.mm[j][i] = row.Dot(rhs.axis[j]);
-			//	}
-			//}
 
 			result.m1 = Vector3(m1, m4, m7).Dot(rhs.axis[0]);
 			result.m2 = Vector3(m2, m5, m8).Dot(rhs.axis[0]);
@@ -93,8 +84,6 @@ namespace MathClasses
 			result.m7 = Vector3(m1, m4, m7).Dot(rhs.axis[2]);
 			result.m8 = Vector3(m2, m5, m8).Dot(rhs.axis[2]);
 			result.m9 = Vector3(m3, m6, m9).Dot(rhs.axis[2]);
-
-
 
 			return result;
 		}
@@ -111,7 +100,7 @@ namespace MathClasses
 		operator const float* () { return v; }
 
 
-		Matrix3 Transposed() const {
+		Matrix3 Transposed() const { 
 			return Matrix3(m1, m4, m7, m2, m5, m8, m3, m6, m9);
 		}
 
