@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Utils.h"
 
 namespace MathClasses
 {
@@ -55,7 +56,7 @@ namespace MathClasses
             return sum;
         }
 
-        Vector3 operator * (float num) const {
+        Vector3 operator * (const float num) {
             Vector3 sum;
             sum.x = x * num;
             sum.y = y * num;
@@ -64,7 +65,7 @@ namespace MathClasses
             return sum;
         }
 
-        Vector3 operator / (float num) const {
+        Vector3 operator / (const float num) {
             Vector3 sum;
             sum.x = x / num;
             sum.y = y / num;
@@ -80,6 +81,31 @@ namespace MathClasses
            
             const float THRESHOLD = 0.00001f;
             return xDist < THRESHOLD && yDist < THRESHOLD && zDist < THRESHOLD;
+        }
+
+        Vector3 operator += (const Vector3 num){
+            x = this->x + num.x;
+            y = this->y + num.y;
+            z = this->z + num.z;
+
+            return *this;
+
+        }
+
+        Vector3 operator *= (const float rhs) {
+            x = x * rhs; 
+            y = y * rhs;
+            z = z * rhs;
+
+            return *this;
+        }
+
+        Vector3 operator *= (const Vector3 rhs) {
+            x = x * rhs.x;
+            y = y * rhs.y;
+            z = z * rhs.z;
+
+            return *this;
         }
 
         bool operator != (const Vector3& rhs) const {
@@ -151,8 +177,6 @@ namespace MathClasses
             return crossdata;
 
         }
-
-
 	};
 
 }
