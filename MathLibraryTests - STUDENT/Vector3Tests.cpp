@@ -114,7 +114,7 @@ namespace MathLibraryTests
 		TEST_METHOD(ScalarMulVectorLeft)
 		{
 			Vector3 v3a(13.5f, -48.23f, 862);
-			Vector3 v3c = v3a * 0.256f;
+			Vector3 v3c = 0.256f * v3a;
 
 			Assert::AreEqual(Vector3(3.45600008965f, -12.3468809128f, 220.672012329f), v3c);
 		}

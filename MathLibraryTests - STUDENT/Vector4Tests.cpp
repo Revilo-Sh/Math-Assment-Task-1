@@ -129,7 +129,7 @@ namespace MathLibraryTests
 		TEST_METHOD(MultiplyScalarPre)
 		{
 			Vector4 v4a(13.5f, -48.23f, 862, 0);
-			Vector4 v4c = v4a * 4.89f;
+			Vector4 v4c = 4.89f * v4a;
 
 			Assert::AreEqual(Vector4(66.0149993896f, -235.844696045f, 4215.1796875f, 0), v4c);
 		}

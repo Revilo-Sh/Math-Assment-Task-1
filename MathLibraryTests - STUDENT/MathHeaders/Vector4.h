@@ -38,6 +38,9 @@ namespace MathClasses
         //Operators
         //-----------------------
 
+
+
+
         Vector4 operator + (const Vector4& rhs) const {
             Vector4 sum;
             sum.x = x + rhs.x;
@@ -68,6 +71,24 @@ namespace MathClasses
 
             return sum;
         }
+
+        static friend Vector4 operator*(const float lhs, const Vector4& rhs)
+        {
+            return rhs * lhs;
+        }
+
+        Vector4 operator *(const Vector4 number) const
+        {
+            Vector4 sum;
+
+            sum.x = x * number.x;
+            sum.y = y * number.y;
+            sum.z = z * number.z;
+            sum.w = w * number.w;
+
+            return sum;
+        }
+
 
         Vector4 operator / (float num) const {
             Vector4 sum;

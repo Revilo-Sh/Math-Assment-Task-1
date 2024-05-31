@@ -38,6 +38,33 @@ namespace MathClasses
         //Operators
         //-----------------------
         
+        static friend Vector3 operator*(const float lhs, const Vector3& rhs)
+        {
+            return rhs * lhs;
+        }
+
+        Vector3 operator *(const Vector3 number) const
+        {
+            Vector3 sum;
+
+            sum.x = x * number.x;
+            sum.y = y * number.y;
+            sum.z = z * number.z;
+
+            return sum;
+        }
+
+        Vector3 operator *(const float number) const
+        {
+            Vector3 sum;
+
+            sum.x = x * number;
+            sum.y = y * number;
+            sum.z = z * number;
+
+            return sum;
+        }
+
         Vector3 operator + (const Vector3& rhs) const {
             Vector3 sum;
             sum.x = x + rhs.x;
